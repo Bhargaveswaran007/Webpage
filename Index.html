@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            .d-flex {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+            .body {
+                font-family: sans-serif;
+                gap: 150px;
+            }
+            .side-heading {
+                color: #2a7de5;
+                font-weight: 900;
+                font-size: 1.1em;
+            }
+            section {
+                padding: 3em 0;
+                padding: 0 3em;
+                font-size: 1.8em;
+            }
+            .collaborative-learning > div:nth-child(1) {
+                width: 40%;
+                gap: 20px;
+            
+                h2 {
+                    margin-bottom: 10px;
+                }
+            }
+            
+            .line-spacing {
+                line-height: 1.4;
+                font-size: 0.8em;
+            }
+            .linear-gradient {
+                background: linear-gradient(to bottom right, #a7ccf1, rgb(250, 250, 250), #a7ccf1);
+            }
+            .lets-learn {
+                margin-top: 60px;
+                padding: 25px;
+                border-radius: 25px;
+                display: flex;
+                justify-content: space-between;
+                gap:50px;
+                padding: 50px;
+                text-align: center;
+            
+                div {
+                    background-color: white;
+                    width: 100%;
+                    padding: 50px;
+                    border-radius: 15px;
+            
+                    img {
+                        width: calc(100% - 80px);
+                        display: inline-block;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .lets-learn-desc {
+                text-align: left;
+            }
+            .learning-phase-discover {
+                padding: 80px;
+                border-radius: 30px;
+                margin-top: 40px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 80px;
+                justify-content: space-between;
+            
+                div {
+                    width: 47.3%;
+                    background-color: white;
+                    padding: 30px;
+                    border-radius: 15px;
+            
+                    h2 {
+                        font-weight: 500;
+                        font-size: 1.2em;
+                    }
+                    p {
+                        font-size: 0.85em;
+                    }
+                    a {
+                        margin-top: auto;
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 1em;
+                        border-radius: 10px;
+                        border: none;
+                        background-color: #d3e5f6;
+                        text-decoration: none;
+                        color: #000;
+                        
+                        .circle {
+                            width: 35px;
+                            height: 35px;
+                            border-radius: 50%;
+                            border: 2px solid black;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+            .collaborative-learning img {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .learning-phase > div:nth-child(1) {
+                p {
+                    width: 70%;
+                    margin: auto;
+                    text-align: center;
+                    font-size: 0.8em;
+                }
+                .side-heading {
+                    font-size: 1.3em;
+                }
+                h2 {
+                    width: 50%;
+                    text-align: center;
+                    margin: auto;
+                }
+            }
+            .Community-Main-page-1{
+                height: 100vh;
+                background: linear-gradient(to bottom right,#a7ccf1, #ffffff, #a7ccf1);
+            }
+            .Coummunity-Main-Navbar{
+                height:100px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                font-family: sans-serif;
+                position: fixed;
+                left: 0;
+                right: 0;
+                z-index: 10;
+                background: linear-gradient(to right, #a7ccf1, #ffffff);
+            }
+            .Coummunity-Main-Navlinks {
+                display: flex;
+                flex-direction: row;
+                gap: 60px;
+                padding-left: 680px;
+                list-style: none;
+                
+                
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-weight: 500;
+                    position: relative;
+                    font-size: 0.8em;
+                }
+                
+                a::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: black;
+                    transition: width 0.4s ease;
+                }
+                
+                a:hover::after {
+                    width: 100%;
+                    right: 0;
+                }
+            }
+            
+            .Coummunity-Main-Navlogin{
+                display: flex;
+                flex-direction: row;
+                gap: 40px;
+                margin-left: 500px;
+                button{
+                    background-color:  transparent;
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: red;
+                    cursor: pointer;
+                    
+                }
+            }
+            .Get-Started {
+                border: 1px solid red;
+                width: 170px;
+                border-radius: 6px;
+                padding: 8px 0;
+                color: red;
+                background-color: white;
+                text-align: center;
+                font-size: 16px;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                transition: color 0.4s ease;
+                z-index: 1;
+            }
+            .Get-Started::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: red;
+                transition: left 0.4s ease;
+                z-index: -1;
+            }
+            
+            .Get-Started:hover {
+                color: white;
+            }
+            
+            .Get-Started:hover::after {
+                left: 0;
+            }
+            
+            
+            .Login{
+                border:none;
+            }
+            .Coummunity-Main-Hero-Word{
+                text-align: center;
+                margin-top:120px;
+                h1{
+                    font-size:48px;
+                    line-height:1.3;
+                    font-weight: 600;
+                }
+            }
+            .Blue-hero{
+                color:#3484e7;
+            }
+            .Coummunity-Main-Hero-SubWord{
+                text-align: center;
+                margin-top: 18px;
+                h2{
+                    font-size: 22px;
+                    font-weight: 500;
+                    line-height: 1.6;
+                }
+            }
+            .Sign-up-now-main {
+                text-align: center;
+                margin-top: 20px;
+            }
+            
+            .Sign-up-now-main button {
+                border: 1px solid red;
+                width: 200px;
+                border-radius: 6px;
+                padding: 8px 0;
+                background-color: transparent;
+                font-size: 18px;
+                color: red;
+                font-weight: 600;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                transition: color 0.4s ease;
+                z-index: 1;
+            }
+            .Sign-up-now-main button::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: red;
+                transition: left 0.4s ease;
+                z-index: -1;
+            }
+            
+            .Sign-up-now-main button:hover {
+                color: white;
+            }
+            
+            .Sign-up-now-main button:hover::after {
+                left: 0;
+            }
+            
+            .Hero-page-Image{
+                text-align: center;
+                margin-top:25px;
+                img{
+                    width: 820px;
+                }
+            }  
+            
+            .Container1{
+                height: 30%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                padding-left: 110px;
+            
+                img {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+            .subtopic{
+                width: 450px;
+                line-height: 45px;
+                font-size: 32px;
+                margin: 20px 0px;
+                
+                font-weight: 600;
+            }
+            .subtopic2{
+                width: 500px;
+                text-align: justify;
+                font-size: 20px;
+                line-height: 32px;
+                font-weight: 540;
+            }
+            .goal > div {
+                display: flex;
+                gap: 30px;
+                margin-top: 50px;
+            
+                * {
+                    width: calc(50% - 30px);
+                }
+                img {
+                    width: 100%;
+                }
+                p {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+                div {
+                    width: 100%;
+                    margin-bottom: 30px;
+                }
+                .side-heading ~ p {
+                    font-size: 0.85em;
+                }
+            }
+            .Community-Submain-Footer{
+                background-color:#e0f3ff;
+                height:350px;
+                margin-top: -120px;
+                text-align: center;
+            }
+            .Main-word-Submain{
+                font-size:40px;
+                font-weight: 600;
+                margin-top:40px;
+                word-spacing: 5px;
+                line-height: 50px;
+                
+            }
+            .Main-word-Submain-2{
+                font-size:24px;
+                margin-top: 15px;
+                line-height: 40px;
+            
+            }
+            .Start-Learning{
+                margin-top:20px;
+                border: 1px solid red;
+                background-color: red;
+                color: white;
+                width: 200px;
+                border-radius: 6px;
+                padding: 8px 0;
+                font-weight: 600;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            
+              .footer {
+                padding: 50px 60px;
+                background-color: #fff;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+              }
+            
+              .footer-left {
+                flex: 1;
+                padding-right: 40px;
+                margin-left: 150px;
+              }
+            
+              .footer-logo {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+              }
+            
+              .footer-logo span {
+                margin-left: 10px;
+                font-size: 1.3rem;
+                font-weight: bold;
+              }
+            
+              .footer-logo .circle {
+                width: 45px;
+                height: 45px;
+                background-color: #007bff;
+                border-radius: 50%;
+              }
+            
+              .footer-text {
+                margin-bottom: 20px;
+                font-size: 1.1rem;
+                max-width: 350px;
+                margin-top: 20px;
+              }
+            
+              .email-form {
+                display: flex;
+                align-items: center;
+                margin-bottom: 30px;
+                margin-top: 40px;
+              }
+            
+              .email-form input[type="email"] {
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 20px 0 0 20px;
+                width: 280px;
+                font-size: 1rem;
+                outline: none;
+              }
+            
+              .email-form button {
+                padding: 12px 25px;
+                background-color:red;
+                color: white;
+                border: none;
+                border-radius: 0 20px 20px 0;
+                font-size: 1rem;
+                cursor: pointer;
+              }
+            
+              .email-form button:hover {
+                background-color:rgb(116, 4, 4);
+              }
+            
+              .footer-right {
+                flex: 2;
+                display: flex;
+                justify-content: space-between;
+                margin-left:500px;
+              }
+            
+              .footer-links {
+                flex: 1;
+                margin-left: 150px;
+                }  
+            
+              .footer-links h4 {
+                margin-bottom: 15px;
+                font-size: 1.2rem;
+                font-weight: bold;
+              }
+            
+              .footer-links ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+              }
+            
+              .footer-links li {
+                margin-bottom: 10px;
+              }
+            
+              .footer-links a {
+                text-decoration: none;
+                color: #333;
+                font-size: 0.95rem;
+              }
+            
+              .footer-links a:hover {
+                text-decoration: underline;
+              }
+            
+              .footer-bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 0.9rem;
+                color: #666;
+                border-top: 1px solid #ddd;
+                padding: 15px 60px;
+                margin-top: 20px;
+                background-color: #fff;
+                margin-top: -130px;
+              }
+            
+              .footer-bottom-left {
+                flex: 1;
+                text-align: left;
+              }
+            
+              .footer-bottom-right {
+                flex: 1;
+                text-align: right;
+              }
+            
+              .footer-bottom p {
+                margin: 0;
+              }
+            
+              .footer-bottom a {
+                text-decoration: none;
+                margin: 0 12px;
+                color: #007bff;
+              }
+            
+              .footer-bottom a:hover {
+                text-decoration: underline;
+              }
+              .footer{
+                margin-top:-100px;
+              }
+              body {
+                font-family: 'Inter', sans-serif;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+            }
+            p {
+                font-family: 'Inter', sans-serif;
+            }
+            .side-heading {
+                font-family: 'Montserrat', sans-serif;
+            }
+            button, .Get-Started, .Sign-up-now, .Start-Learning {
+                font-family: 'Montserrat', sans-serif;
+            }
+            .footer-text, .footer-links a {
+                font-family: 'Inter', sans-serif;
+            }
+            .Main-word-Submain, .Main-word-Submain-2 {
+                font-family: 'Poppins', sans-serif;
+            }
+            
+        </style>        
+    </head>
+    <body class="d-flex body">
+        <Section class="Community-Main-page-1" id="home">
+            <header class="Coummunity-Main-Navbar">
+                <img src="" alt="">
+                <ul class="Coummunity-Main-Navlinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+                <form action="">
+                    <ul class="Coummunity-Main-Navlogin">
+                        <button class="Login">Login</button>
+                        <button class="Get-Started">Get Started</button>
+                    </ul>
+                </form>
+            </header>
+            <div class="Coummunity-Main-Hero-Word">
+                <h1><span class="Blue-hero">Upgrade</span> your knowledge. <span class="Blue-hero">sharpen</span> your skills.<br><span class="Blue-hero">unlock</span> endless possibilities. </h1>
+            </div>
+            <div class="Coummunity-Main-Hero-SubWord">
+                <h2>The ultimate platform for mastering new skills, exploring passions, and achieving your goals. Whether you're a<br>student, professional, or lifelong learner, our app offers expert-led courses, interactive lessons, and personalized<br>learning paths to fit your needs. </h2>
+            </div>
+            <div class="Sign-up-now-main">
+                <button class="Sign-up-now">Sign up now</button>
+            </div>
+            <div class="Hero-page-Image">
+                <img src="Images/Hero-page-1.png" alt="Network error">
+            </div>
+        </Section>
+        <section class="collaborative-learning" id="features">
+            <div class="d-flex">
+                <p class="side-heading">Collaborative Learning</p>
+                <h2>
+                    Collaboration Fuels Innovation Let's Learn as One
+                </h2>
+                <p class="line-spacing">
+                    Join study groups, brainstorm ideas, and solve challenges together in real time. With discussion forums, live sessions, and shared projects, you can learn faster and retain knowledge better.
+                </p>
+            </div>
+            <div class="linear-gradient lets-learn">
+                <div class="d-flex">
+                    <img src="./Images/C&c.png" alt="">
+                    <p class="side-heading">Connect and Collaborate</p>
+                    <p class="lets-learn-desc line-spacing">Our community-driven platform connects learners, mentors, and experts to share knowledge, exchange ideas, and grow as a team. Our interactive community makes learning engaging and rewarding</p>
+                </div>
+                <div class="d-flex">
+                    <img src="./Images/S&E.png" alt="">
+                    <p class="side-heading">Share and Encourage</p>
+                    <p class="lets-learn-desc line-spacing">Learning is not just about consuming content, it's about sharing knowledge and engaging with a vibrant community. post-sharing lets users exchange ideas, insights, and resources in an interactive space.</p>
+                </div> 
+                <div class="d-flex">
+                    <img src="./Images/Chat.png" alt="">
+                    <p class="side-heading">Chat and Comprehend</p>
+                    <p class="lets-learn-desc line-spacing">Connect instantly with peers. mentors, and study groups through our real-time chat feature. Discuss ideas, collaborate on projects, and get instant feedback all in a safe and interactive learning space.</p>
+                </div>
+            </div>
+        </section>
+        <section class="learning-phase">
+            <div class="d-flex">
+                <p class="side-heading" style="text-align: center;">Learning Phase</p>
+                <h2>Embark on a Learning Adventure and Master New Skills</h2>
+                <p>Designed to help you discover, grow, and master new skills at your own pace. Whether you're starting from scratch or advancing to the next level, this phase provides a structured path.</p>
+            </div>
+            <div class="linear-gradient learning-phase-discover">
+                <div class="d-flex">
+                    <p class="side-heading">Choose</p>
+                    <h2>Pick what sparks your curiosity</h2>
+                    <p>Browse through a wide range of expertly curated courses and choose the ones that align with your goals and passions.</p>
+                    <a href="#">
+                        <span>Explore</span><span class="circle">➡</span>
+                    </a>
+                </div>
+                <div class="d-flex">
+                    <p class="side-heading">Learn</p>
+                    <h2>Learn Today, Lead Tomorrow</h2>
+                    <p>Dive into your chosen courses, absorb knowledge, and apply what you learn to real-world situations,</p>
+                    <a href="#">
+                        <span>Explore</span><span class="circle">➡</span>
+                    </a>
+                </div>
+                <div class="d-flex">
+                    <p class="side-heading">Track</p>
+                    <h2>Track your progress learning</h2>
+                    <p>Our tracking feature helps you monitor your growth, measure success, and keep you motivated to reach your learning goals</p>
+                    <a href="#">
+                        <span>Explore</span><span class="circle">➡</span>
+                    </a>
+                </div>
+                <div class="d-flex">
+                    <p class="side-heading">Evaluate</p>
+                    <h2>Evaluate for Excellence</h2>
+                    <p>Track your performance, receive personalized feedback, and identify areas to improve by assessing your performence</p>
+                    <a href="#">
+                        <span>Explore</span><span class="circle">➡</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="Container1">
+            <p class="side-heading">Feedback System</p>
+            <h1 class="subtopic">Instant Feedback to Propel Your Learning Forward.</h1>
+            <p class="subtopic2">Get instant, personalized feedback on your work, track your progress, and receive actionable insights to keep growing. Whether from instructors or peers.</p>
+            <div class="linear-gradient lets-learn">
+                <div class="d-flex">
+                    <img src="./Images/Real-time-feedback.png" alt="">
+                    <p class="side-heading">Real-Time Feedback</p>
+                    <p class="lets-learn-desc line-spacing">Receive instant, actionable feedback on assignments, quizzes, and projects.</p>
+                </div>
+                <div class="d-flex">
+                    <img src="./Images/P&S.png" alt="">
+                    <p class="side-heading">Personalized Suggestion</p>
+                    <p class="lets-learn-desc line-spacing">Get tailored recommendations for improvement based on your performance.</p>
+                </div> 
+                <div class="d-flex">
+                    <img src="./Images/peer-reviews.png" alt="">
+                    <p class="side-heading">Peer Reviews</p>
+                    <p class="lets-learn-desc line-spacing">Collaborate with peers for mutual feedback and constructive insights.</p>
+                </div>
+            </div>
+        </section>
+        <section class="goal">
+            <h2>Our Goal: Empowering You to Learn, Grow and Succeed</h2>
+            <div>
+                <div>
+                    <img src="./Images/OurGoal.png" alt="">
+                </div>
+                <div class="d-flex">
+                    <div>
+                        <p class="side-heading">Accessible Education for All</p>
+                        <p>Break down barriers to education by providing high-quality learning experiences to learners everywhere.</p>
+                    </div>
+                    <div>
+                        <p class="side-heading">Collaboration & Community</p>
+                        <p>Foster a strong community of learners, mentors, and experts who inspire and support each other's growth.</p>
+                    </div>
+                    <div>
+                        <p class="side-heading">Quality & Expert-Led Courses</p>
+                        <p>Provide access to expert-led courses in diverse fields that are relevant, up-to-date, and industry-standard.</p>
+                    </div>
+                    <div>
+                        <p class="side-heading">Continuous Improvement</p>
+                        <p>Regularly update our courses and features based on feedback and evolving learning needs.</p>
+                    </div>
+                    <div>
+                        <p class="side-heading">Personalized Learning Paths</p>
+                        <p>Tailor the learning experience to each individual, helping them learn at their own pace and according to their goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="Community-Submain-Footer">
+            <div>
+               <p class="Main-word-Submain">Your Learning Journey Starts Here<br>Unlock Your Potential </p>
+               <p class="Main-word-Submain-2">With personalized courses, engaging content, and a supportive<br>community, we're here to help you achieve your goals. </p>
+               <button class="Start-Learning">Start Learning</button>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-left">
+              <div class="footer-logo">
+                <div class="circle"></div>
+                <span>Website Name</span>
+              </div>
+              <p class="footer-text">Transform Your Knowledge, Unlock Your Potential, and Achieve Your Dreams</p>
+        
+              <form class="email-form">
+                <input type="email" placeholder="Enter your Email" required>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+        
+            <div class="footer-right">
+              <div class="footer-links">
+                <h4>Company Information</h4>
+                <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Careers</a></li>
+                </ul>
+              </div>
+              <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><a href="#">Pricing Plans</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Terms & Conditions</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                </ul>
+              </div>
+            </div>
+          </footer>
+          <div class="footer-bottom">
+            <div class="footer-bottom-left">
+              <p>support@name.com</p>
+            </div>
+            <div class="footer-bottom-right">
+              <p>
+                <a href="#">Terms of service</a> |
+                <a href="#">Privacy policy</a> |
+                <a href="#">Cookies</a>
+              </p>
+            </div>
+          </div>
+    </body>
+</html>
